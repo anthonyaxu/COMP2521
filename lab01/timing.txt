@@ -1,0 +1,157 @@
+Input	Initial	Has	   Number	AvgTime	AvgTime
+Size	Order	Dups   of runs	forusel	forsort
+
+
+5000	random	no	     3	    0.071s	0.005s
+5000	sorted	no	     3	    0.000s	0.000s
+5000	reverse	no	     3	    0.000s	0.000s
+
+5000	random	yes	     3	    0.068s	0.003s
+5000	sorted	yes	     3	    0.000s  0.000s
+5000    reverse yes      3      0.000s  0.000s 
+Average run time for usel and sort for 5000 numbers are both very small, for both no duplicates
+and with duplicates. They all have quite similar numbers (at or close to zero seconds). 
+
+
+10000	random	no	     3	    0.320s	0.004s
+10000	sorted	no	     3	    0.004s	0.004s
+10000   reverse no       3      0.004s  0.004s
+
+10000   random  yes      3      0.320s  0.004s
+10000	sorted	yes	     3	    0.004s	0.004s
+10000	reverse	yes	     3	    0.004s	0.004s
+The results for when the numbers are already sorted and sorted in reverse are the exact same
+and very small for both sorting functions. This would make sense as it only has to put the numbers
+at the front or back. There is a small discrepency between usel and sort when it comes to a random
+order of numbers
+
+
+50000   random  no       3      17.8s   0.036s
+50000   sorted  no       3      0.017s  0.017s
+50000   reverse no       3      0.017s  0.019s
+
+50000   random  yes      3      17.7s   0.040s
+50000   sorted  yes      3      0.015s  0.017s
+50000   reverse yes      3      0.016s  0.019s
+The times for sorted and reverse are very similar. However, the results for random order for usel
+is very different to all the other results. The other results are all very close to zero seconds while 
+usel is running for roughly 18 seconds. This is probably because my usel function has to loop through 
+all numbers and find its correct spot. It has to do it ~50000 times, which is why it takes such a long time. 
+
+
+100000  random  no       3      89.1s   0.079s
+100000  sorted  no       3      0.032s  0.033s
+100000  reverse no       3      0.028s  0.039s
+
+100000  random  yes      3      87.2    0.083s
+100000  sorted  yes      3      0.036s  0.037s
+100000  reverse yes      3      0.040s  0.040s
+
+Some patterns observed were that the average run time for usel to sort a random order was always longer than
+it took the sort function. As the input size increased, the average usel time grew greatly. This was because
+my usel function had to loop through all the numbers to find where the new number would sit. If the new number
+was something close to the end of the list, it would have to loop through thousands and thousands of numbers, which
+is why it is so slow. The usel function for when it was sorted and in reverse was basically the same as the sort
+function probably because it doesn't have to loop through the whole list and only put the number at the beginning
+or the end. 
+
+
+
+__________________________________________________
+
+
+5000 random order, no duplicates: user time
+    usel: 0.072s  0.068s  0.072s = 0.071s
+    sort: 0.004s  0.004s  0.008s = 0.0053s
+    
+5000 sorted, no duplicates: user time
+    usel: 0.000s  0.000s  0.000s
+    sort: 0.000s  0.000s  0.000s
+    
+5000 reverse sorted, no duplicates: user time
+    usel: 0.000s  0.000s  0.000s
+    sort: 0.000s  0.000s  0.000s
+    
+5000 random order, with duplicates: user time
+    usel: 0.068s  0.068s  0.068s = 0.068s
+    sort: 0.000s  0.004s  0.004s = 0.0027s
+    
+5000 sorted, with duplicate: user time
+    usel: 0.000s  0.000s  0.000s  
+    sort: 0.000s  0.000s  0.000s
+    
+5000 reverse sorted, with duplicates: user time
+    usel: 0.000s  0.000s  0.000s
+    sort: 0.000s  0.000s  0.000s
+    
+10000 random order, no duplicates: user time
+    usel: 0.332s  0.316s  0.320s = 0.320s
+    sort: 0.004s  0.004s  0.004s = 0.004s
+    
+10000 sorted, no duplicates: user time
+    usel: 0.004s  0.004s  0.004s = 0.004s
+    sort: 0.004s  0.004s  0.004s = 0.004s
+    
+10000 reverse sorted, no dups: user time
+    usel: 0.004s  0.004s  0.004s = 0.004s
+    sort: 0.004s  0.004s  0.004s = 0.004s
+    
+10000 random order, dups: user time
+    usel: 0.312s  0.316s  0.340s = 0.320s
+    sort: 0.004s  0.004s  0.004s = 0.004s
+    
+10000 sorted, dups: user time
+    usel: 0.004s  0.004s  0.004s = 0.004s
+    sort: 0.004s  0.000s  0.004s = 0.004s
+    
+10000 reverse sorted, dups: user time
+    usel: 0.004s  0.004s  0.004s = 0.004s
+    sort: 0.004s  0.004s  0.004s = 0.004s
+    
+50000 random, no dups: user time
+    usel: 17.992s  17.880s  17.444s = 17.772s
+    sort: 0.036s   0.036s   0.036s  = 0.036s
+    
+50000 sorted, no dups: user time
+    usel: 0.016s  0.020s  0.016s = 0.017s
+    sort: 0.016s  0.016s  0.020s = 0.017s
+    
+50000 reverse, no dups: user time
+    usel: 0.016s  0.020s  0.016s = 0.017s
+    sort: 0.020s  0.020s  0.016s = 0.019s
+    
+50000 random, dups: user time
+    usel: 17.462s  17.712s  17.872s = 17.7s
+    sort: 0.040s   0.040s   0.040s  = 0.040s
+    
+50000 sorted, dups: user time
+    usel: 0.016s  0.016s  0.012s = 0.015s
+    sort: 0.016s  0.020s  0.016s = 0.017s
+    
+50000 reverse, dups: user time
+    usel: 0.016s  0.016s  0.016s = 0.016s
+    sort: 0.020s  0.020s  0.016s = 0.019s
+    
+100000 random, no dups: user time
+    usel: 88.434s  91.332s  87.620s = 89.1s 
+    sort: 0.080s   0.076s   0.080s  = 0.079s
+    
+100000 sorted, no dups: user time
+    usel: 0.036s  0.032s  0.028s = 0.032s
+    sort: 0.028s  0.036s  0.036s = 0.033s
+    
+100000 reverse, no dups: user time
+    usel: 0.024s  0.032s  0.028s = 0.028s
+    sort: 0.040s  0.036s  0.040s = 0.039s
+    
+100000 random, dups: user time
+    usel: 88.218s  86.892s  86.484s = 87.2s
+    sort: 0.080s   0.084s   0.084s  = 0.083s
+    
+100000 sorted, dups: user time
+    usel: 0.036s  0.036s  0.036s = 0.036s
+    sort: 0.036s  0.040s  0.036s = 0.037s
+    
+100000 reverse, dups: user time
+    usel: 0.036s  0.036s  0.036s = 0.036s
+    sort: 0.040s  0.040s  0.040s = 0.040s
