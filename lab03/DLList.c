@@ -284,6 +284,7 @@ void DLListDelete(DLList L)
             free(tmp->value);
             free(tmp);
             L->curr = L->first = L->last = NULL;
+            L->nitems--;
         } else if (L->curr == L->last) {
             tmp = L->curr;
             L->last = L->curr->prev;
@@ -291,6 +292,7 @@ void DLListDelete(DLList L)
             free(tmp);
             L->curr = L->last;
             L->curr->next = NULL;
+            L->nitems--;
         }
     } else if (L->curr == L->first) {
         tmp = L->first;
@@ -298,6 +300,7 @@ void DLListDelete(DLList L)
         L->curr = L->first;
         free(tmp->value);
         free(tmp);
+        L->nitems--;
     } else {
         tmp = L->curr->prev;
         tmp2 = L->curr->next;
@@ -306,8 +309,8 @@ void DLListDelete(DLList L)
         free(L->curr->value);
         free(L->curr);
         L->curr = tmp2;
+        L->nitems--;
     }
-    L->nitems--;
 }
 
 // return number of elements in a list
@@ -320,4 +323,4 @@ int DLListLength(DLList L)
 int DLListIsEmpty(DLList L)
 {
 	return (L->nitems == 0);
-}
+} 
