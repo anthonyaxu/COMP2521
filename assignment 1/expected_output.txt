@@ -1,0 +1,91 @@
+
+--====  Test-01       ====------
+> Inserting 25: Success 
+> Inserting 78: Success 
+> Inserting 6: Success 
+> Inserting 82: Success 
+> Inserting 11: Success 
+--====  End of Test-01 ====------
+
+--====  Test-02       ====------
+> Inserting 72: Success 
+> Inserting 14: Success 
+> Inserting 62: Success 
+> Inserting 8: Success 
+> Inserting 93: Success 
+> Next value is:  93
+> Next value is:  8
+> Previous value is:  8
+> Set value: 55 ; return val: 1 
+> Previous value is:  55
+--====  End of Test-02 ====------
+
+--====  Test-03       ====------
+> Inserting 4: Success 
+> Inserting 54: Success 
+> Inserting 15: Success 
+> Inserting 12: Success 
+> Inserting 34: Success 
+> it1 (after reset): 
+ 34,  12,  15,  54,  4
+> advance(it1, 4) returns: 
+ 34,  12,  15,  54
+> advance(it1, -3) returns: 
+ 54,  15,  12
+> In 'it1', > Previous value is:  34
+--====  End of Test-03 ====------
+
+--====  Test-04       ====------
+> Inserting 97: Success 
+> Inserting 10: Success 
+> Inserting 61: Success 
+> Inserting 73: Success 
+> Inserting 47: Success 
+> it1 (after reset): 
+ 47,  73,  61,  10,  97
+> find(it1, passMarks) returns: 
+ 73,  61,  97
+> In 'it1', 
+> Next value is:  47
+> Next value is:  73
+
+> del(it1) results in the following and returns 1: 
+> it1 (after reset): 
+ 47,  61,  10,  97
+--====  End of Test-04 ====------
+
+--====  Test-05       ====------
+> Inserting joe: Success 
+> Inserting rita: Success 
+> Inserting john: Success 
+> Inserting abby: Success 
+> Inserting peter: Success 
+> Next value is:  peter
+> Next value is:  abby
+> Previous value is:  abby
+> Set value: sydney ; return val: 1 
+> Previous value is:  sydney
+--====  End of Test-05 ====------
+
+--====  Test-06       ====------
+> Inserting kylie: Success 
+> Inserting lian: Success 
+> Inserting john: Success 
+> Inserting arnav: Success 
+> Inserting joe: Success 
+> it (after reset): 
+ joe,  arnav,  john,  lian,  kylie
+> advance(it, 3) returns: 
+ joe,  arnav,  john
+> advance(it, -2) returns: 
+ john,  arnav
+> it (after reset): 
+ joe,  arnav,  john,  lian,  kylie
+> find(it, prefixJo) returns: 
+ joe,  john
+
+> In 'it',  
+> Next value is:  joe
+> Next value is:  arnav
+--====  End of Test-06 ====------
+
